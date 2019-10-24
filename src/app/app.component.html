@@ -1,20 +1,43 @@
+<nav mat-tab-nav-bar>
+  <h3 class="name">Oscar Flores</h3>
+  <div name="nav-links">
+      <a mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="link.link"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive"
+    class="nav-url"
+    >
+    {{ link.label }}
+    </a>
+
+  </div>
+</nav>
 <!--The content below is only a placeholder and can be replaced.-->
-<core-nav></core-nav>
+<!-- <core-nav></core-nav> -->
 
-<div class="row nav-links">
-  <div class="col">
-    <a routerLink="/home">Home</a>
-  </div>
-  <div class="col">
-    <a routerLink="/experience">Experience</a>
 
-  </div>
-  <div class="col">
-    <a routerLink="/contact">Contact</a>
-  </div>
-  <div class="col">
-    <a routerLink="/portfolio">Portfolio</a>
-  </div>
+<!-- 
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <div class="container">
+      <a class="navbar-brand">Angular Router</a>
+      <ul class="nav navbar-nav" routerLinkActive="active">
+          <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="contact">Contact</a></li>
 
-</div>
+      </ul>
+  </div>
+</nav> -->
+
+
 <router-outlet></router-outlet>
+<footer class="footer">
+  <div class="social-media">
+    <i class="fa fa-twitter-square fa-2x tweet" (click)="openTwitter()"></i>
+    <i class="fa fa-linkedin fa-2x linked" (click)="openLinkedIn()"></i>
+    <i class="fa fa-envelope fa-2x email"></i>
+  </div>
+
+</footer>

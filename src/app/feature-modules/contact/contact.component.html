@@ -1,3 +1,53 @@
-<p>
-  contact works!
-</p>
+<div class="row contact">
+<mat-card class="about-me" color="primary">
+  <mat-card-header>
+    <mat-card-title>
+      ABOUT ME
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>Who am I</p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="contact-me" color="primary">
+  <mat-card-header>
+      <mat-card-title>
+         GET IN TOUCH
+      </mat-card-title>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <div class="contact-form">
+      <p>
+          I’m always looking to collaborate with new people. 
+          If you have project idea in mind or would like to connect, please don’t hesitate to get in touch. 
+          PLease fill out the form below.  I look forward to hearing from you!
+      </p>
+      <mat-form-field>
+        <input matInput placeholder="Name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email">
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Message"></textarea>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-select placeholder="Type">
+          <mat-option value="option">General</mat-option>
+          <mat-option value="option">Subscribe</mat-option>
+          <mat-option value="option">Employment Opportunities</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <button mat-raised-button>Send</button>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+</div>
+

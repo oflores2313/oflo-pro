@@ -1,0 +1,26 @@
+.experience {
+  margin-left: 6em;
+  margin-right: 6em;
+  margin-top: 2em;
+}
+body > app-root > app-experience > div > mat-card {
+  height: 50em;
+}
+.experience > .resume > mat-card > mat-card-header {
+  font-size: 18px;
+  font-style: oblique;
+}
+.experience > .resume {
+  width: 75em;
+  height: 90em;
+  display: block;
+  position: relative;
+  font-family: monospace;
+  margin-left: 14em;
+  margin-right: 14em;
+}
+.download {
+  margin-left: 45em;
+  margin-bottom: 10px;
+  outline-color: white;
+}
