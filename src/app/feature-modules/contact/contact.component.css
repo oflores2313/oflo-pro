@@ -1,9 +1,9 @@
 .contact {
-    margin-left: 6em;
+    margin-left: 5em;
     margin-right: 5em;
 }
 .contact > .mat-card {
-    width: 50em;
+    width: 53em;
     font-family: monospace;
 }
 .about-me{
