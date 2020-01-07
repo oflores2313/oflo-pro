@@ -13,8 +13,13 @@ body {
 nav {
     background-color: white;
 }
+
 body > app-root > nav {
     box-shadow: 0 0 10px;
+}
+body > app-root > nav > div.mat-tab-links{
+    display: block;
+    text-align: center;
 }
 body > app-root > nav > div > a.nav-url.mat-tab-link{
     font-family: monospace;
@@ -24,9 +29,7 @@ body > app-root > nav > div > div >a:hover {
     text-decoration: none;
     color: grey;
 }
-body > app-root > nav > div > div {
-    padding-left: 5em;
-}
+
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
     background-color: black;
 }

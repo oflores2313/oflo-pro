@@ -1,38 +1,38 @@
-
 /* .mat-tab-nav-bar{
     text-align: center;
     */
 /* .nav-url{
     display: block;
 }  */
+
 body > app-root > nav {
-    background-color: lightgrey;
-    border-bottom: 0px;
+  background-color: lightgrey;
+  border-bottom: 0px;
 }
 .name {
-    font-family: monospace;
-    padding-top: 10px;
-    padding-left: 10px;
+  font-family: monospace;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
-.social-media{
-    position: relative;
-    text-align: center;
-    margin-top: 4em;
+.social-media {
+  position: relative;
+  text-align: center;
+  margin-top: 4em;
 }
 .social-media > .fa-2x {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 .social-media > .tweet {
-    color: lightblue;
+  color: lightblue;
 }
 .social-media > .linked {
-    background: lightgray;
-    color: white;
-    border-radius: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+  background: lightgray;
+  color: white;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .social-media > .email {
-    color: lightgray;
+  color: lightgray;
 }
