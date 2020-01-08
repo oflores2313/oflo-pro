@@ -47,7 +47,5 @@ export class AppComponent {
   openLinkedIn(){
     window.open('https://www.linkedin.com/in/oscar-flores-64b34270', '_blank')
   }
-  openTwitter(){
-    window.open('https://twitter.com/oflo13', '_blank')
-  }
+
 }
