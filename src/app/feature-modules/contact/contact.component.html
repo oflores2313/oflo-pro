@@ -27,36 +27,37 @@
          GET IN TOUCH
       </mat-card-title>
   </mat-card-header>
-  
-  <mat-card-content>
-    <div class="contact-form">
-      <p>
-          I’m always looking to collaborate with new people. 
-          If you have project idea in mind or would like to connect, please don’t hesitate to get in touch. 
-          PLease fill out the form below.  I look forward to hearing from you!
-      </p>
-      <mat-form-field>
-        <input matInput placeholder="Name">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Email">
-      </mat-form-field>
-      <mat-form-field>
-        <textarea matInput placeholder="Message"></textarea>
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-select placeholder="Type">
-          <mat-option value="option">General</mat-option>
-          <mat-option value="option">Subscribe</mat-option>
-          <mat-option value="option">Employment Opportunities</mat-option>
-        </mat-select>
-      </mat-form-field>
-      
-      <button mat-raised-button>Send</button>
-    </div>
+  <form [formGroup]="contactForm" (ngSubmit)="contactMe(contactForm.value)">
+    <mat-card-content>
+      <div class="contact-form">
+        <p>
+            I’m always looking to collaborate with new people. 
+            If you have project idea in mind or would like to connect, please don’t hesitate to get in touch. 
+            PLease fill out the form below.  I look forward to hearing from you!
+        </p>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Name" formControlName="name" id="name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email" id="email">
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="Message" formControlName="message" id="message"></textarea>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <mat-select placeholder="Type" formControlName="messageType" id="messageType">
+            <mat-option value="general">General</mat-option>
+            <mat-option value="subscribe">Subscribe</mat-option>
+            <mat-option value="employment">Employment Opportunities</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <button mat-raised-button >Send</button>
+      </div>
 
-  </mat-card-content>
+    </mat-card-content>
+  </form>
 </mat-card>
 
 </div>
