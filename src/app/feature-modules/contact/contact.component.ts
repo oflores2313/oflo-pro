@@ -25,6 +25,7 @@ export class ContactComponent implements OnInit {
 
 
   contactMe(contactFormData) {
+    console.log('test: ', contactFormData)
     this.contactService.submitContactMessage(contactFormData).subscribe()
     
   }
