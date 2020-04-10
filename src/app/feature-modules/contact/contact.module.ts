@@ -6,7 +6,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactService } from './contact.service';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [ContactComponent],
   imports: [
@@ -17,7 +20,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
     MatButtonModule,
     MatSelectModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers: [
+    ContactService
   ]
 })
 export class ContactModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ContactService } from './contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +11,7 @@ export class ContactComponent implements OnInit {
   public contactForm: FormGroup;
 
 
-  constructor() { }
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
     this.contactForm = new FormGroup({
@@ -24,6 +25,7 @@ export class ContactComponent implements OnInit {
 
 
   contactMe(contactFormData) {
-    console.log('hey oscar: ', contactFormData)
+    this.contactService.submitContactMessage(contactFormData).subscribe()
+    
   }
 }
