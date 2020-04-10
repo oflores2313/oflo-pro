@@ -1,9 +1,9 @@
 {
   "name": "oflo-pro-docker",
-  "version": "2.1.0",
+  "version": "2.1.2",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port=4300",
+    "start": "ng serve --public-host=8n5vwvvmk2.execute-api.us-east-1.amazonaws.com --port=4300",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
