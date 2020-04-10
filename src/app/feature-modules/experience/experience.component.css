@@ -1,6 +1,5 @@
 .experience {
-  margin-left: 6em;
-  margin-right: 6em;
+  margin: auto;
   margin-top: 2em;
 }
 body > app-root > app-experience > div > mat-card {
@@ -16,11 +15,37 @@ body > app-root > app-experience > div > mat-card {
   display: block;
   position: relative;
   font-family: monospace;
-  margin-left: 14em;
-  margin-right: 14em;
+  margin-left: auto;
+  margin-right: auto;
 }
 .download {
   margin-left: 45em;
   margin-bottom: 10px;
   outline-color: white;
+}
+iframe {
+  width: 100%;
+  height: 78em;
+}
+
+@media(max-width: 600px){
+  .experience {
+    margin-left: 0;
+    margin-right: 0;
+    height: 35rem;
+  }
+  .experience > .resume {
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    
+  }
+  .download {
+    margin-left: 2rem;
+  }
+  iframe {
+    width: 100%;
+    height: 30rem!important;
+  }
 }
