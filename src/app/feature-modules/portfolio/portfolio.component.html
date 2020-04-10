@@ -1,15 +1,32 @@
-<div class="portfolio">
-  <span> COMING SOON </span>
-</div>
+<ng-container *ngFor="let project of projects">
+  <div class="card top">
+  
+      <mat-card>
+        <div class="tech-image"></div>
+        <span class="project-name">{{ project.name }}</span>
+        
+        <p class="project-description">{{ project.description }}</p>
+        <div class="project-tech">
+          <mat-chip-list aria-label="Tech Stack">
+            <mat-chip *ngFor="let tech of project.technology">{{
+              tech
+            }}</mat-chip>
+            
+          </mat-chip-list>
+          <button mat-raised-button (click)=openGitHub(project.id)>Open Github</button>
+        </div>
+      </mat-card>
+
+  </div>
+</ng-container>
 
 <div class="winter-is-coming">
-  
   <div class="snow snow--near"></div>
   <div class="snow snow--near snow--alt"></div>
-  
+
   <div class="snow snow--mid"></div>
   <div class="snow snow--mid snow--alt"></div>
-  
+
   <div class="snow snow--far"></div>
   <div class="snow snow--far snow--alt"></div>
 </div>
