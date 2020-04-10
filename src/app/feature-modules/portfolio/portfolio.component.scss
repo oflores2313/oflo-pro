@@ -1,33 +1,55 @@
-div.portfolio{
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10%;
-    height: 40%;
-    width: 40%;
-    background-color: white;
-    border-radius: 25%;
-    text-align: center;
-    padding-top: 10%;
-    box-shadow: 0px 0px 4px silver;
+div.card {
+  width: 80%;
+  margin: auto;
+  height: 13rem;
+  margin-bottom: 2rem;
+}
+
+div.top {
+  top: 5rem;
+}
+.project-name {
+  font-size: 20px;
+  margin-left: 15rem;
+}
+.project-description {
+  margin-left: 15rem;
+}
+  
+.project-tech {
+  margin-left: 15rem!important;
+}
+button {
+  margin-top: 1rem;
+}
+div.portfolio {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  height: 40%;
+  width: 40%;
+  background-color: white;
+  border-radius: 25%;
+  text-align: center;
+  padding-top: 10%;
+  box-shadow: 0px 0px 4px silver;
 }
 span {
-    font-family: "Gugi", cursive;
-    font-size: 50px;
+  font-family: "Gugi", cursive;
+  font-size: 50px;
 }
 
 $s--near: 10s;
 $s--mid: ($s--near * 2);
 $s--far: ($s--near * 3);
 
-$ease--out-quad: cubic-bezier(.25,.46,.450,.94);
-
+$ease--out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
 %on-top {
   z-index: 100;
   pointer-events: none;
 }
-
 
 .winter-is-coming {
   @extend %on-top;
@@ -39,51 +61,53 @@ $ease--out-quad: cubic-bezier(.25,.46,.450,.94);
   max-width: 100%;
 }
 
-
 .snow {
   @extend %on-top;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   animation: falling linear infinite both;
-  transform: translate3D(0,-100%,0);
-    
+  transform: translate3D(0, -100%, 0);
+
   &--near {
     animation-duration: $s--near;
-    background-image: url('https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-large-075d267ecbc42e3564c8ed43516dd557.png');
+    background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-large-075d267ecbc42e3564c8ed43516dd557.png");
     background-size: contain;
-    
+
     & + .snow--alt {
       animation-delay: ($s--near / 2);
     }
   }
-    
+
   &--mid {
     animation-duration: $s--mid;
-    background-image: url('https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png');
+    background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png");
     background-size: contain;
-    
+
     & + .snow--alt {
       animation-delay: ($s--mid / 2);
     }
   }
-    
+
   &--far {
     animation-duration: $s--far;
-    background-image: url('https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png');
+    background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png");
     background-size: contain;
-    
+
     & + .snow--alt {
       animation-delay: ($s--far / 2);
     }
   }
 }
-      
+
 @keyframes falling {
   0% {
-    transform: translate3D(-7.5%,-100%, 0);
+    transform: translate3D(-7.5%, -100%, 0);
   }
-      
+
   100% {
-    transform: translate3D(7.5%,100%, 0);
-  }  
+    transform: translate3D(7.5%, 100%, 0);
+  }
 }
