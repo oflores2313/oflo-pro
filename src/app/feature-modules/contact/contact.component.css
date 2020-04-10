@@ -1,51 +1,67 @@
 .contact {
-    margin-left: 5em;
-    margin-right: 5em;
+  margin-left: 5em;
+  margin-right: 5em;
 }
 .contact > .mat-card {
-    width: 53em;
-    font-family: monospace;
+  width: 53em;
+  font-family: monospace;
 }
-.about-me{
-    /* max-width: 50%; */
-    margin-top: 5em;
-    /* margin-left: 25%; */
-    border-radius: 25px;
-    margin-right: 2em;
+.about-me {
+  /* max-width: 50%; */
+  margin-top: 5em;
+  /* margin-left: 25%; */
+  border-radius: 25px;
+  margin-right: 2em;
 }
 .contact-me {
-    /* max-width: 50%; */
-    margin-top: 5em;
-    /* margin-left: 25%; */
-    border-radius: 25px;
+  /* max-width: 50%; */
+  margin-top: 5em;
+  /* margin-left: 25%; */
+  border-radius: 25px;
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
+}
 
-  
 .contact-form > * {
-    width: 100%;
+  width: 100%;
 }
 
 .contact-form form {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .contact-form form > * {
-    margin: 5px 0;
+  margin: 5px 0;
 }
-  
+
 .contact-form .mat-radio-button {
-    margin: 0 12px;
+  margin: 0 12px;
 }
 
 .contact-form button {
-    outline-color: white;
-    border-radius: 25px;
-    margin: auto;
-    display: block;
-    width: 50%;
+  outline-color: white;
+  border-radius: 25px;
+  margin: auto;
+  display: block;
+  width: 50%;
 }
+
+@media (max-width: 600px){
+    .contact {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+    .about-me {
+        /* max-width: 50%; */
+        margin-top: 5em;
+        /* margin-left: 25%; */
+        border-radius: 25px;
+        margin-right: 0;
+      }
+      .contact-me {
+          margin-top: 2rem;
+      }
+};
