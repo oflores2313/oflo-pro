@@ -684,11 +684,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
+/* harmony import */ var _contact_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./contact.service */ "./src/app/feature-modules/contact/contact.service.ts");
+
 
 
 
 var ContactComponent = /** @class */ (function () {
-    function ContactComponent() {
+    function ContactComponent(contactService) {
+        this.contactService = contactService;
     }
     ContactComponent.prototype.ngOnInit = function () {
         this.contactForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
@@ -699,15 +702,19 @@ var ContactComponent = /** @class */ (function () {
         });
     };
     ContactComponent.prototype.contactMe = function (contactFormData) {
-        console.log('hey oscar: ', contactFormData);
+        console.log('test: ', contactFormData);
+        this.contactService.submitContactMessage(contactFormData).subscribe();
     };
+    ContactComponent.ctorParameters = function () { return [
+        { type: _contact_service__WEBPACK_IMPORTED_MODULE_3__["ContactService"] }
+    ]; };
     ContactComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-contact',
             template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./contact.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/feature-modules/contact/contact.component.html")).default,
             styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./contact.component.css */ "./src/app/feature-modules/contact/contact.component.css")).default]
         }),
-        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_contact_service__WEBPACK_IMPORTED_MODULE_3__["ContactService"]])
     ], ContactComponent);
     return ContactComponent;
 }());
@@ -736,6 +743,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/input.js");
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/button.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
+/* harmony import */ var _contact_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./contact.service */ "./src/app/feature-modules/contact/contact.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
+
+
 
 
 
@@ -760,11 +771,55 @@ var ContactModule = /** @class */ (function () {
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"],
                 _angular_material_select__WEBPACK_IMPORTED_MODULE_6__["MatSelectModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientModule"]
+            ],
+            providers: [
+                _contact_service__WEBPACK_IMPORTED_MODULE_10__["ContactService"]
             ]
         })
     ], ContactModule);
     return ContactModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/feature-modules/contact/contact.service.ts":
+/*!************************************************************!*\
+  !*** ./src/app/feature-modules/contact/contact.service.ts ***!
+  \************************************************************/
+/*! exports provided: ContactService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactService", function() { return ContactService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
+
+
+
+var ContactService = /** @class */ (function () {
+    function ContactService(http) {
+        this.http = http;
+        this.contactApiURL = 'https://8n5vwvvmk2.execute-api.us-east-1.amazonaws.com/oflo-pro-contact-us';
+    }
+    ContactService.prototype.submitContactMessage = function (message) {
+        return this.http.post(this.contactApiURL, message);
+    };
+    ContactService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+    ]; };
+    ContactService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], ContactService);
+    return ContactService;
 }());
 
 
