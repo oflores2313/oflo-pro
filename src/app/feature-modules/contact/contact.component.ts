@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from './contact.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +12,10 @@ export class ContactComponent implements OnInit {
   public contactForm: FormGroup;
 
 
-  constructor(private contactService: ContactService) { }
+  constructor(
+    private contactService: ContactService,
+    private toastrService: ToastrService
+    ) { }
 
   ngOnInit() {
     this.contactForm = new FormGroup({
@@ -26,7 +30,10 @@ export class ContactComponent implements OnInit {
 
   contactMe(contactFormData) {
     console.log('test: ', contactFormData)
-    this.contactService.submitContactMessage(contactFormData).subscribe()
+    this.contactService.submitContactMessage(contactFormData).subscribe(
+      success => this.toastrService.success('Thank you', 'Message submitted successfully'),
+      err => this.toastrService.error('Error', 'Message not submitted')
+    )
     
   }
 }
