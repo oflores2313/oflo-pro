@@ -1,6 +1,6 @@
 {
-  "name": "oflo-pro-docker",
-  "version": "2.1.2",
+  "name": "oflo-pro",
+  "version": "2.1.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --public-host=8n5vwvvmk2.execute-api.us-east-1.amazonaws.com --port=4300",
