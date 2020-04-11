@@ -12,6 +12,7 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { PortfolioModule } from './feature-modules/portfolio/portfolio.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatTabsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ToastrModule.forRoot()
     
   ],
   exports: [
